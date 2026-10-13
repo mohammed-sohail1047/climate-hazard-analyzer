@@ -1,0 +1,275 @@
+
+:root {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: #182a2b;
+  background: #f3f6f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.dashboard {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 42px 0;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  color: #287d74;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: -1.2px;
+}
+
+.subtitle {
+  max-width: 700px;
+  color: #647574;
+  line-height: 1.7;
+}
+
+.status-pill {
+  white-space: nowrap;
+  padding: 9px 13px;
+  border: 1px solid #c8e2dc;
+  border-radius: 999px;
+  background: #e8f5f1;
+  color: #22685f;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.panel,
+.metric-card {
+  background: #ffffff;
+  border: 1px solid #e1e9e6;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgb(27 59 49 / 4%);
+}
+
+.panel {
+  padding: 24px;
+  margin-bottom: 22px;
+}
+
+h2 {
+  margin: 0 0 18px;
+  font-size: 19px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: end;
+  gap: 16px;
+}
+
+.filters label {
+  display: grid;
+  gap: 8px;
+  color: #526563;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.filters input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #d7e1dd;
+  border-radius: 9px;
+  background: #fbfdfc;
+  color: #182a2b;
+}
+
+.filters input:focus {
+  outline: 2px solid #9dd0c4;
+  border-color: #287d74;
+}
+
+.filters button {
+  grid-column: 1 / -1;
+  justify-self: start;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 9px;
+  background: #246e65;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background: #19584f;
+}
+
+.filters button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.metric-card {
+  padding: 22px;
+}
+
+.metric-card p {
+  min-height: 38px;
+  margin: 0 0 14px;
+  color: #657775;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.metric-card strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+
+.metric-card span,
+.section-heading p,
+.muted {
+  color: #81908d;
+  font-size: 12px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.section-heading h2 {
+  margin-bottom: 6px;
+}
+
+.section-heading p {
+  margin-top: 0;
+}
+
+.chart-count {
+  color: #287d74;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.chart {
+  width: 100%;
+  height: 320px;
+  margin-top: 22px;
+}
+
+.empty-state {
+  display: grid;
+  place-content: center;
+  min-height: 220px;
+  color: #657775;
+  text-align: center;
+}
+
+.empty-state span {
+  color: #81908d;
+  font-size: 13px;
+}
+
+.event-list {
+  display: grid;
+  gap: 12px;
+}
+
+.event-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #e1e9e6;
+  border-radius: 10px;
+  background: #f8fbfa;
+}
+
+.error-message {
+  margin-top: 18px;
+  color: #b42318;
+  font-size: 14px;
+}
+
+footer {
+  padding: 12px 0;
+  color: #81908d;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 850px) {
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page-header {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .dashboard {
+    width: min(100% - 24px, 1180px);
+    padding: 24px 0;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-card strong {
+    font-size: 26px;
+  }
+}
