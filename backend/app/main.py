@@ -20,17 +20,24 @@ app = FastAPI(
 
 
 
+
+
+from fastapi.middleware.cors import CORSMiddleware
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
-        # Add your deployed frontend URL here after deployment.
+        "https://climate-hazard-analyzer-brown.vercel.app",
+        "https://climate-hazard-analyzer-qo9vik1nv-mohammed-sohail-s-projects1.vercel.app",
     ],
     allow_credentials=False,
     allow_methods=["GET"],
     allow_headers=["*"],
 )
+
+
 
 
 
